@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/masterLayout :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<main role="main">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-12">
+        <form action="#" th:action="@{/address-form}" th:object="${address}" method="post">
+          <div class="form-group">
+            <label for="streetName">Street Name</label>
+            <input type="text" id="streetName" th:field="*{streetName}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="streetNumber">Street Number</label>
+            <input type="text" id="streetNumber" th:field="*{streetNumber}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" th:field="*{country}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="zipCode">ZipCode</label>
+            <input type="text" id="zipCode" th:field="*{zipCode}" class="form-control">
+          </div>
+
+          <div>
+            <a th:href="@{/department-form}" class="btn btn-primary">Previous</a>
+            <input type="submit" value="Save" class="btn btn-info">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
